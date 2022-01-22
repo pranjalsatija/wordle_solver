@@ -15,12 +15,15 @@ func EvaluateCandidate(word string, hint string, unplacedCharacters string, reje
 		return false
 	}
 
-	for i := 0; i < 5; i++ {
-		if hint[i] != '*' && word[i] != hint[i] {
+	wordRunes := []rune(word)
+	hintRunes := []rune(hint)
+
+	for i, char := range wordRunes {
+		if hintRunes[i] != '*' && char != hintRunes[i] {
 			return false
 		}
 
-		if strings.Contains(rejectedCharacters, string(word[i])) {
+		if strings.ContainsRune(rejectedCharacters, char) {
 			return false
 		}
 
