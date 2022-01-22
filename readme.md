@@ -8,7 +8,7 @@ This program takes 3 inputs as flags:
 
 - `hint` (defaults to `"*****"`) - A string containing the characters that are already known. Any unknown characters should be denoted by an asterisk. This **must** be exactly 5 characters.
 - `unplaced` (defaults to `""`) - A string containing the characters that are known to be in the word, but are unplaced.
-- `rejected` (defaults to `""`) - A string containing the characters that have been rejected from the string.
+- `rejected` (defaults to `""`) - A string containing the characters that have been rejected from the word.
 
 ### Example Usage
 
