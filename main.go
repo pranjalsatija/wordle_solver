@@ -10,15 +10,15 @@ import (
 	"unicode/utf8"
 )
 
-func EvaluateCandidate(word string, hint string, unplacedCharacters string, rejectedCharacters string) bool {
-	if utf8.RuneCountInString(word) != 5 {
+func EvaluateCandidate(candidate string, hint string, unplacedCharacters string, rejectedCharacters string) bool {
+	if utf8.RuneCountInString(candidate) != 5 {
 		return false
 	}
 
-	wordRunes := []rune(word)
+	candidateRunes := []rune(candidate)
 	hintRunes := []rune(hint)
 
-	for i, char := range wordRunes {
+	for i, char := range candidateRunes {
 		if hintRunes[i] != '*' && char != hintRunes[i] {
 			return false
 		}
@@ -28,7 +28,7 @@ func EvaluateCandidate(word string, hint string, unplacedCharacters string, reje
 		}
 
 		for _, unplacedCharacter := range unplacedCharacters {
-			if !strings.ContainsRune(word, unplacedCharacter) {
+			if !strings.ContainsRune(candidate, unplacedCharacter) {
 				return false
 			}
 		}
