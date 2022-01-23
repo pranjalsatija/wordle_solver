@@ -18,7 +18,10 @@ go run main.go -hint='*inc*' -unplaced='e' -rejected ='tarsovph'
 
 ### Unicode
 
-I haven't tested it very thoroughly, but this _should_ be Unicode-safe. This was done defensively as I wasn't sure if `/usr/share/dict/words` has any words with accent characters.
+I haven't tested it very thoroughly, but this _should_ be Unicode-safe. This was done defensively as I wasn't sure if `/usr/share/dict/words` has any words with accent characters. The following steps are taken to try and achieve Unicode safety:
+* String lengths are calculated using `utf8.RuneCountInString` instead of `len(string)`.
+* Strings are iterated and compared by rune.
+* `strings.ContainsRune` is used to test the membership of a rune within a string.
 
 ### Performance
 
