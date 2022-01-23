@@ -25,7 +25,7 @@ I haven't tested it very thoroughly, but this _should_ be Unicode-safe. This was
 
 ### Performance
 
-It's fast enough to be useful as-is so I haven't tried any real optimizations:
+It's fast enough to be useful as-is so I haven't tried any real optimizations. Here are benchmark results that require scanning the entire word list:
 
 ```
 Running tool: /usr/local/bin/go test -benchmem -run=^$ -bench ^BenchmarkFindCandidates$ pranj.co/wordle
